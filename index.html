@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Chat</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>
+</head>
+<body>
+    <h1 class="text"></h1>
+<div class="cont">
+    <video class="video" src="" id="video"></video>
+    <iframe class="rickroll" src="" frameborder="0"></iframe>
+</div>
+</body>
+
+<script >
+    const WebCamElement = document.getElementById('video')
+    const webCam = new Webcam(WebCamElement,"user")
+    webCam.start()
+   .then(result =>{
+      console.log("webcam started");
+      document.querySelector('h1.text').innerText="Rare Video of an idiot falling into a trap"
+      document.querySelector('iframe').src='https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1'
+   })
+   .catch(err => {
+       console.log(err);
+   }); ;
+</script>
+</html>
